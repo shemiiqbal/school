@@ -1,0 +1,48 @@
+<!-- Masthead-->
+<section class="masthead bg-white text-black text-center">
+  <div class="container d-flex align-items-center flex-column">
+    {{#if user}}
+    <h6 style="padding-bottom:35px; margin-top:-40px; text-align:center;">Welcome {{user.username}}</h6>
+    {{/if}}
+    <!-- Masthead Avatar Image-->
+    <img style="margin-top:-20px;" class="masthead-avatar mb-1" src="images\Muslim_Kid_2.png" alt="..." />
+    <!-- Masthead Heading-->
+    <h1 class="masthead-heading text-uppercase">Madrasa Diary</h1>
+    <!-- Icon Divider-->
+    <div class="divider-custom divider-light">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+    <!-- Masthead Subheading-->
+    <p style="margin-top:-50px;" class="masthead-subheading font-weight-light">An Islamic Institution</p>
+  
+  <a style="width:fit-content;
+  color:aliceblue;
+   border: none;
+   background-color:#ff7f62;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  margin-bottom:100px;
+  cursor: pointer;" class="btn btn-button"{{#if user}} href="/user-form"
+  {{else}}
+   href="/login"
+   {{/if}}>Practical Record</a>
+   <style>
+  @media only screen and (max-width: 600px) {
+  .masthead-avatar {
+    padding-top: 50px;
+  }
+  
+}
+</style>
+</div>
+
+</section>
+
+
+

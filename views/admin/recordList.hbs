@@ -1,0 +1,62 @@
+<section class="page-section">
+    <div style="margin-top:5rem; padding:100px;" class="container1">
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">PRACTICAL RECORD</h2>
+</div>
+        <div class="container">
+
+            <table style="margin-top:50px;" class="table table-bordered">
+
+
+                <tr>
+
+
+                    <th scope="col" style="text-align:center;">Date</th>
+                    <th style="text-align:center;" scope="col">Options</th>
+
+                </tr>
+                {{#each files}}
+                <tr style="margin-top:20rem ;">
+
+
+                    <td style="text-align:center ;">{{this.date}}</td>
+                    <td style="text-align:center ;"><a style="background-color: #ff7f62; color:aliceblue;"
+                            class="btn btn-button" href="/admin/record/{{this._id}}">View Record</a>
+                        <a style="background-color: #719cfe; color:aliceblue;" class="btn btn-button"
+                            onclick="return confirm('Do u want to delete ?')"
+                            href="/admin/delete-Data/{{this._id}}">Delete
+
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+        <style>
+            @media only screen and (max-width: 540px) {
+                .page-section {
+                    font-size: 16px;
+                    padding-top: 50px;
+                }
+
+                .table {
+                    width:330px;
+                    font-size: 16px;
+                
+                }
+                
+            }
+
+            @media screen and (min-width: 540px) and (max-width: 780px) {
+                .page-section {
+                    padding-top: 50px;
+                }
+            }
+
+            @media screen and (min-width: 780) {
+                .page-section {
+                    padding-bottom: 7rem;
+                    ;
+                }
+            }
+        </style>
+    </div>
+</section>

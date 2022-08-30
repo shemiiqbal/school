@@ -1,0 +1,70 @@
+<section>
+  <div class="container">
+    <h2 style="margin-top:10rem;">Students Details</h2>
+  </div>
+</section>
+<section>
+  <table style="margin-top:50px; margin-bottom:7rem;" id="studentsTable" class="table">
+    <thead>
+      <tr>
+        <th>Number:</th>
+        <th>Names of students:</th>
+        <th>Roll No:</th>
+        <th>Options:</th>
+      </tr>
+    </thead>
+    {{#each user}}
+    <tbody>
+      <tr>
+        <td></td>
+        <td>{{this.username}}</td>
+        <td>{{this.RollNo}}</td>
+
+
+        <td> <a style="background-color: #ff7f62; color:aliceblue;" class="btn btn-button"
+            href="/admin/recordList?rollno={{this.RollNo}}">Details</a>
+
+          <a style="background-color: #719cfe; color:aliceblue;" class="btn btn-button"
+            onclick="return confirm('Do u want to delete {{this.username}}?')"
+            href="/admin/delete-Dataa/{{this._id}}">Delete
+          </a>
+        </td>
+      </tr>
+    </tbody>
+    {{/each}}
+  </table>
+
+  <style>
+    body {
+      counter-reset: Serial;
+      /* Set the Serial counter to 0 */
+    }
+
+    tr td:first-child:before {
+      counter-increment: Serial;
+      /* Increment the Serial counter */
+      content: counter(Serial);
+      /* Display the counter */
+    }
+    
+      @media only screen and (max-width: 540px) {
+  .table {
+    width: 600px;;
+  }
+  
+}
+@media screen and (min-width: 540px) and (max-width: 780px) {
+    .view {
+        width: 600px;
+    }
+}
+  </style>
+</section>
+
+<script>
+  $(document).ready(function () {
+    $('#studentsTable').DataTable();
+  });
+
+
+</script>

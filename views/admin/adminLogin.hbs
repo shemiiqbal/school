@@ -1,0 +1,71 @@
+
+<section class="page-section mt-5" id="login">
+  <div class="row container">
+    <!-- Contact Section Heading-->
+    <div class="col-md-9 col-sm-12">
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Admin Login</h2>
+      <!-- Icon Divider-->
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
+      </div>
+      <!-- Contact Section Form-->
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-xl-7 col-sm-12">
+
+          <form action="/admin/adminLogin" method="POST">
+            <!-- Name input-->
+            {{#if loginErr}}
+            <p class="error">Invalid Email or Password</p>
+            {{/if}}
+            <div class="form-floating mb-3">
+              <input class="form-control" name="email" type="email" placeholder="Enter your name..." />
+              <label for="email">Email</label>
+
+            </div>
+
+            <!-- Password input-->
+            <div class="form-floating mb-3">
+              <input class="form-control" name="password" type="password" placeholder="(123) 456-7890" />
+              <label for="password">Password</label>
+
+            </div>
+
+
+            <!-- Submit Button-->
+            <button class="btn btn-primary btn-xl" type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="login-Image col-md-3">
+      <figure><img src="images/Muslim_kid_4.png" alt="sing up image" style="width:450px;height:450px;"></figure>
+
+</section>
+<style>
+  .button {
+    background-color: #ff7f62;
+    border: none;
+    color: white;
+    padding: 20px 34px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+      @media only screen and (max-width: 600px) {
+  .page-section-heading {
+    padding-top: 80px;
+  }
+  .login-Image{
+	display: none;
+  }
+  
+}
+
+</style>

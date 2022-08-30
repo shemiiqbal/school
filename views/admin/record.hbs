@@ -1,0 +1,586 @@
+<section class="page-section">
+  <div style="margin-top:5rem; padding-bottom:20px" class="container">
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">PRACTICAL RECORD</h2>
+
+    <!--<div style="text-align:left">
+      <h4 style="margin-top:50px;">Name: {{user.username}}</h4>
+      <h4>Class: {{user.class}}</h4>
+      <h4>Division: {{studentData.division}}</h4>
+      <h4>Roll No: {{user.RollNo}}</h4>-->
+
+  </div>
+  <div class="container">
+    <table style="margin: top 10px; text-align:left;" class="table table-bordered">
+
+      <h3>Prayers</h3>
+      <tr>
+        <th scope="col">Fajr</th>
+        <td id="fajr">{{studentData.Fajr}}</td>
+      </tr>
+
+      <tr>
+        <th style="text-align:left;" scope="col">Dhuhr</th>
+        <td id="Dhuhr">{{studentData.Dhuhr}}</td>
+      </tr>
+      <tr>
+        <th scope="col">Asr</th>
+        <td id="Asr">{{studentData.Asr}}</td>
+      </tr>
+      <tr>
+        <th scope="col">Maghrib</th>
+        <td id="Maghrib">{{studentData.Maghrib}}</td>
+      </tr>
+      <tr>
+        <th scope="col">Ishaa</th>
+        <td id="Ishaa">{{studentData.Ishaa}}</td>
+      </tr>
+    </table>
+
+    <table style="margin-top:15px;  text-align:left;" class="table table-bordered">
+      <h3>Daily Activities</h3>
+      <tr>
+        <th scope="col">Thilavath</th>
+        <td id="Thilavath">{{studentData.Thilavath}}</td>
+      </tr>
+
+      <tr>
+        <th scope="col">Hifdh</th>
+        <td id="Hifdh">{{studentData.Hifdh}}</td>
+      </tr>
+
+      <tr>
+        <th scope="col">Sunnah Prayer</th>
+        <td id="SunnahPrayer">{{studentData.SunnahPrayer}}</td>
+      </tr>
+
+      <tr>
+        <th scope="col">Dhikr,Duas</th>
+        <td id="DhikrDuas">{{studentData.DhikrDuas}}</td>
+      </tr>
+
+      <tr>
+        <th scope="col">Neat and Tidy</th>
+        <td id="NeatandTidy">{{studentData.NeatandTidy}}</td>
+      </tr>
+
+      <tr>
+        <th scope="col">Friendship</th>
+        <td id="Friendship">{{studentData.Friendship}}</td>
+      </tr>
+    </table>
+
+
+
+
+    <table style="margin-top:15px; text-align:left;" class="table table-bordered">
+      <h3>Reading</h3>
+      <tr>
+        <th scope="col"> NewsPaper</th>
+        <td id="NewsPaper">{{studentData.NewsPaper}}</td>
+      </tr>
+      <tr>
+        <th scope="col">Childrens Publications</th>
+        <td id="Childrens">{{studentData.ChildrensPublications}}</td>
+
+      </tr>
+      <tr>
+        <th scope="col"> Library</th>
+        <td id="Library">{{studentData.Library}}</td>
+      </tr>
+
+
+
+    </table>
+
+    <table style="margin-top:15px; margin-bottom:4rem; text-align:left; " class="table table-bordered">
+
+      <h3>Situations</h3>
+      <tr>
+        <th scope="col">My child makes salam when S(he) enters/ leaves home. </th>
+        <td id="salam">{{studentData.Salam}}</td>
+      </tr>
+
+      <tr>
+        <th style="text-align:left;" scope="col">My child performs daily salah without being reminded.</th>
+        <td id="salah">{{studentData.Dailysalah}}</td>
+      </tr>
+      <tr>
+        <th scope="col">My Child recites Quran on a daily basis.</th>
+        <td id="Quran">{{studentData.QuranRecitation}}</td>
+      </tr>
+      <tr>
+        <th scope="col">My Child is obedient.</th>
+        <td id="obedient">{{studentData.Obidience}}</td>
+      </tr>
+      <tr>
+        <th scope="col">My Child responds to Azaan ,if heard.</th>
+        <td id="Azaan">{{studentData.RespondstoAzaan}}</td>
+      </tr>
+
+      <th scope="col">My Child keeps modesty in his/her dressing.</th>
+      <td id="modesty">{{studentData.ModestDressing}}</td>
+      </tr>
+      <th scope="col">My Child is much concerned about prayers when(s)he goes out.</th>
+      <td id="prayers">{{studentData.PrayersWhenGoesOut}}</td>
+      </tr>
+      <th scope="col">My Child learns additional hours to know islam more.</th>
+      <td id="islam">{{studentData.KnowIslam}}</td>
+      </tr>
+
+      <th scope="col">My Child says Bismillah when starts something good/useful.</th>
+      <td id="Bismillah">{{studentData.Bismillah}}</td>
+      </tr>
+
+    </table>
+    <p id="body_demo">Your Score is:</p>
+    <p id="demo"></p>
+
+    <button style="background-color: #ff7f62;" type="button" onclick="myFunction()">Calculate</button>
+    <style>
+      @media only screen and (max-width: 540px) {
+        .page-section {
+        
+          padding-top: 140px;
+        }
+
+        .table {
+          width: 330px;
+          font-size: 16px;
+
+        }
+
+      }
+
+    
+    </style>
+  </div>
+</section>
+
+<script>
+  function myFunction() {
+
+
+    // var marks=[['Excellent',4],['Satisfactory',3],['Not Satisfactory',2],['Need Attention',1],['yes',1],['no',0]];
+    var totalmarks = 0;
+    //score of fajr
+    x = document.getElementById("fajr");
+    try {
+
+      if (x.firstChild.data == 'Excellent') {
+        totalmarks += 4;
+      }
+      else if (x.firstChild.data == 'Satisfactory') {
+        totalmarks += 3;
+      }
+      else if (x.firstChild.data == 'Not Satisfactory') {
+        totalmarks += 2;
+      }
+      else if (x.firstChild.data == 'Need Attention') {
+        totalmarks += 1;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+    //score of Dhuhr
+
+    y = document.getElementById("Dhuhr");
+    try {
+      if (y.firstChild.data == 'Excellent') {
+        totalmarks += 4;
+      }
+      else if (y.firstChild.data == 'Satisfactory') {
+        totalmarks += 3;
+      }
+      else if (y.firstChild.data == 'Not Satisfactory') {
+        totalmarks += 2;
+      }
+      else if (y.firstChild.data == 'Need Attention') {
+        totalmarks += 1;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+    //score of Asr
+    z = document.getElementById("Asr");
+    try {
+      if (z.firstChild.data == 'Excellent') {
+        totalmarks += 4;
+      }
+      else if (z.firstChild.data == 'Satisfactory') {
+        totalmarks += 3;
+      }
+      else if (z.firstChild.data == 'Not Satisfactory') {
+        totalmarks += 2;
+      }
+      else if (z.firstChild.data == 'Need Attention') {
+        totalmarks += 1;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+    //score of Maghrib
+    a = document.getElementById("Maghrib");
+    try {
+      if (y.firstChild.data == 'Excellent') {
+        totalmarks += 4;
+      }
+      else if (a.firstChild.data == 'Satisfactory') {
+        totalmarks += 3;
+      }
+      else if (a.firstChild.data == 'Not Satisfactory') {
+        totalmarks += 2;
+      }
+      else if (a.firstChild.data == 'Need Attention') {
+        totalmarks += 1;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+    //score of Ishaa
+    b = document.getElementById("Ishaa");
+    try {
+      if (b.firstChild.data == 'Excellent') {
+        totalmarks += 4;
+      }
+      else if (b.firstChild.data == 'Satisfactory') {
+        totalmarks += 3;
+      }
+      else if (b.firstChild.data == 'Not Satisfactory') {
+        totalmarks += 2;
+      }
+      else if (b.firstChild.data == 'Need Attention') {
+        totalmarks += 1;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+    //score of Thilavath
+    c = document.getElementById("Thilavath");
+    try {
+      if (c.firstChild.data == 'Excellent') {
+        totalmarks += 4;
+      }
+      else if (c.firstChild.data == 'Satisfactory') {
+        totalmarks += 3;
+      }
+      else if (c.firstChild.data == 'Not Satisfactory') {
+        totalmarks += 2;
+      }
+      else if (c.firstChild.data == 'Need Attention') {
+        totalmarks += 1;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+
+    //score of Hifdh
+    d = document.getElementById("Hifdh");
+    try {
+      if (d.firstChild.data == 'Excellent') {
+        totalmarks += 4;
+      }
+      else if (d.firstChild.data == 'Satisfactory') {
+        totalmarks += 3;
+      }
+      else if (d.firstChild.data == 'Not Satisfactory') {
+        totalmarks += 2;
+      }
+      else if (d.firstChild.data == 'Need Attention') {
+        totalmarks += 1;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+    //score of Sunnah Prayer
+    e = document.getElementById("SunnahPrayer");
+    try {
+      if (e.firstChild.data == 'Excellent') {
+        totalmarks += 4;
+      }
+      else if (e.firstChild.data == 'Satisfactory') {
+        totalmarks += 3;
+      }
+      else if (e.firstChild.data == 'Not Satisfactory') {
+        totalmarks += 2;
+      }
+      else if (e.firstChild.data == 'Need Attention') {
+        totalmarks += 1;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+    //score of Dhikr and Duas
+    f = document.getElementById("DhikrDuas");
+    try {
+      if (f.firstChild.data == 'Excellent') {
+        totalmarks += 4;
+      }
+      else if (f.firstChild.data == 'Satisfactory') {
+        totalmarks += 3;
+      }
+      else if (f.firstChild.data == 'Not Satisfactory') {
+        totalmarks += 2;
+      }
+      else if (f.firstChild.data == 'Need Attention') {
+        totalmarks += 1;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+    //score of Neat and Tidy
+    g = document.getElementById("NeatandTidy");
+    try {
+      if (g.firstChild.data == 'Excellent') {
+        totalmarks += 4;
+      }
+      else if (g.firstChild.data == 'Satisfactory') {
+        totalmarks += 3;
+      }
+      else if (g.firstChild.data == 'Not Satisfactory') {
+        totalmarks += 2;
+      }
+      else if (g.firstChild.data == 'Need Attention') {
+        totalmarks += 1;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+
+    //score of Friendship
+    h = document.getElementById("Friendship");
+    try {
+      if (h.firstChild.data == 'Excellent') {
+        totalmarks += 4;
+      }
+      else if (h.firstChild.data == 'Satisfactory') {
+        totalmarks += 3;
+      }
+      else if (h.firstChild.data == 'Not Satisfactory') {
+        totalmarks += 2;
+      }
+      else if (h.firstChild.data == 'Need Attention') {
+        totalmarks += 1;
+      }
+      else if (h.firstChild.data == "{}") {
+        totalmarks += 0;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+
+
+    //score of NewsPaper
+    i = document.getElementById("NewsPaper");
+    try {
+      if (i.firstChild.data == 'Excellent') {
+        totalmarks += 4;
+      }
+      else if (i.firstChild.data == 'Satisfactory') {
+        totalmarks += 3;
+      }
+      else if (i.firstChild.data == 'Not Satisfactory') {
+        totalmarks += 2;
+      }
+      else if (i.firstChild.data == 'Need Attention') {
+        totalmarks += 1;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+    //score of Childrens
+    j = document.getElementById("Childrens");
+    try {
+      if (j.firstChild.data == 'Excellent') {
+        totalmarks += 4;
+      }
+      else if (j.firstChild.data == 'Satisfactory') {
+        totalmarks += 3;
+      }
+      else if (j.firstChild.data == 'Not Satisfactory') {
+        totalmarks += 2;
+      }
+      else if (j.firstChild.data == 'Need Attention') {
+        totalmarks += 1;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+    //score of Library
+    j = document.getElementById("Library");
+    try {
+      if (j.firstChild.data == 'Excellent') {
+        totalmarks += 4;
+      }
+      else if (j.firstChild.data == 'Satisfactory') {
+        totalmarks += 3;
+      }
+      else if (j.firstChild.data == 'Not Satisfactory') {
+        totalmarks += 2;
+      }
+      else if (j.firstChild.data == 'Need Attention') {
+        totalmarks += 1;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+    //score of salam
+    k = document.getElementById("salam");
+    try {
+      if (k.firstChild.data == 'Yes') {
+        totalmarks += 1;
+      }
+      else if (k.firstChild.data == 'No') {
+        totalmarks += 0;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+    //score of salah
+    l = document.getElementById("salah");
+    try {
+      if (l.firstChild.data == 'Yes') {
+        totalmarks += 1;
+      }
+      else if (l.firstChild.data == 'No') {
+        totalmarks += 0;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+    //score of Quran
+    m = document.getElementById("Quran");
+    try {
+      if (m.firstChild.data == 'Yes') {
+        totalmarks += 1;
+      }
+      else if (m.firstChild.data == 'No') {
+        totalmarks += 0;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+    //score of obedient
+    n = document.getElementById("obedient");
+    try {
+      if (n.firstChild.data == 'Yes') {
+        totalmarks += 1;
+      }
+      else if (n.firstChild.data == 'No') {
+        totalmarks += 0;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+    //score of Azaan
+    o = document.getElementById("Azaan");
+    try {
+      if (o.firstChild.data == 'Yes') {
+        totalmarks += 1;
+      }
+      else if (o.firstChild.data == 'No') {
+        totalmarks += 0;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+    //score of modesty
+    p = document.getElementById("modesty");
+    try {
+      if (p.firstChild.data == 'Yes') {
+        totalmarks += 1;
+      }
+      else if (p.firstChild.data == 'No') {
+        totalmarks += 0;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+
+    //score of prayers
+    q = document.getElementById("prayers");
+    try {
+      if (q.firstChild.data == 'Yes') {
+        totalmarks += 1;
+      }
+      else if (q.firstChild.data == 'No') {
+        totalmarks += 0;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+    //score of islam
+    r = document.getElementById("islam");
+    try {
+      if (r.firstChild.data == 'Yes') {
+        totalmarks += 1;
+      }
+      else if (r.firstChild.data == 'No') {
+        totalmarks += 0;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+    //score of Bismillah
+    s = document.getElementById("Bismillah");
+    try {
+      if (s.firstChild.data == 'Yes') {
+        totalmarks += 1;
+      }
+      else if (s.firstChild.data == 'No') {
+        totalmarks += 0;
+      }
+      else if (s.firstChild.data == 'null') {
+        totalmarks += 0;
+      }
+    }
+    catch (err) {
+      document.getElementById("demo").innerHTML = err.message;
+    }
+    document.getElementById("body_demo").innerHTML = "Your score is: " + totalmarks + " out of 65";
+
+  }
+//for (var i=0; i < students.length; i++) {
+  //      Avgmarks += students[i][1];
+    //    var avg = (Avgmarks/students.length);
+//}
+
+//console.log("Average grade: " + (Avgmarks)/students.length);
+  /*
+          if (avg < 60){
+            console.log("Grade : F");      
+            } 
+          else if (avg < 70) {
+                  console.log("Grade : D"); 
+                    } 
+          else if (avg < 80) 
+               {
+                  console.log("Grade : C"); 
+          } else if (avg < 90) {
+                  console.log("Grade : B"); 
+          } else if (avg < 100) {
+                  console.log("Grade : A"); 
+  }*/
+
+</script>
